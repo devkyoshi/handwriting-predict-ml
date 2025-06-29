@@ -1,5 +1,8 @@
 import numpy as np
 from PIL import Image, ImageOps
+
+import matplotlib
+matplotlib.use("TkAgg") 
 import matplotlib.pyplot as plt
 
 def preprocess_image(image):

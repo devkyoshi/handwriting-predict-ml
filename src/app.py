@@ -5,6 +5,9 @@ import numpy as np
 from src.utils import preprocess_image
 from tensorflow.keras.models import load_model
 from PIL import Image, ImageDraw 
+
+import matplotlib
+matplotlib.use("TkAgg") 
 import matplotlib.pyplot as plt
 
 
