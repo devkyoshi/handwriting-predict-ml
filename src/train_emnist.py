@@ -50,6 +50,6 @@ model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accur
 model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=128)
 
 # Save the trained model
-model.save("src/model/emnist_model.h5")
+model.save("model/emnist_model.h5")
 
-print("✅ Model trained and saved as src/emnist_model.h5")
+print("✅ Model trained and saved as model/emnist_model.h5")

@@ -92,7 +92,7 @@ python src/app.py
    This will:
    - Load and preprocess the EMNIST dataset
    - Train a CNN model for 10 epochs
-   - Save the trained model as `src/model/emnist_model.h5`
+   - Save the trained model as `model/emnist_model.h5`
 
 2. **Run the application**:
    ```bash
