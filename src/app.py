@@ -10,7 +10,7 @@ import matplotlib
 matplotlib.use("TkAgg") 
 import matplotlib.pyplot as plt
 
-CLASSES = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabdefghnqrt"
+CLASSES = "0123456789"
 
 class HandwritingRecognizerApp:
     def __init__(self, root):
@@ -87,15 +87,15 @@ class HandwritingRecognizerApp:
 
 
     def predict(self):
-        self.image.show()
+        # self.image.show()
         image = preprocess_image(self.image)
 
        
-        # Show the preprocessed image for debugging
-        plt.imshow(image.reshape(28, 28), cmap='gray')
-        plt.title("Preprocessed Image")
-        plt.axis('off')
-        plt.show()
+        # # Show the preprocessed image for debugging
+        # plt.imshow(image.reshape(28, 28), cmap='gray')
+        # plt.title("Preprocessed Image")
+        # plt.axis('off')
+        # plt.show()
 
 
         prediction = self.model.predict(image)

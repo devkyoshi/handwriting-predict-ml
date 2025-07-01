@@ -1,19 +1,14 @@
 import numpy as np
-from PIL import Image, ImageOps
+from PIL import ImageOps
 
-import matplotlib
-matplotlib.use("TkAgg") 
-import matplotlib.pyplot as plt
 
 def preprocess_image(image):
-    image = image.convert("L")                 # Grayscale
-    image = image.resize((28, 28))             # Resize
-    # image = ImageOps.mirror(image)             # 🔄 Flip horizontally!
+    image = image.convert("L")
+    image = image.resize((28, 28))
+    image = ImageOps.invert(image)
 
-    # Flip horizontally if needed
-    if image.size[0] > image.size[1]:
-        image = ImageOps.mirror(image)
+    image_array = np.array(image).astype("float32") / 255.0
+    image_array[image_array < 0.2] = 0.0
 
-    image = ImageOps.invert(image)             # Invert to match EMNIST
-    image = np.array(image).astype("float32") / 255.0
-    return image.reshape(1, 28, 28, 1) 
+    return image_array.reshape(1, 28, 28, 1)
+
